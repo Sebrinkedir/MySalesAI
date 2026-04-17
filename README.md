@@ -23,17 +23,17 @@ Multi-Agent Sequential Workflow
 The system has two versions:
 
 1. Single-Agent:
-One AI does everything (data + analysis + explanation)
+One AI does everything 
 
 2. Multi-Agent:
-- Data Agent → loads and cleans data
-- Analysis Agent → calculates results
-- Insight Agent → explains results
-- Coordinator → connects everything
+- Data Agent  = loads and cleans data
+- Analysis Agent  = calculates results
+- Insight Agent =  explains results
+- Coordinator =  connects everything
 
 This separation helps reduce errors and improve clarity.
 
-## Current Progress (April 17)
+# Current Progress for April 17
 
 - Requirements finalized
 - Architecture defined and diagram created
