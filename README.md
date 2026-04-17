@@ -1,5 +1,7 @@
 # MySalesAI
 
+Multi-Agent Sequential Workflow
+![Architecture Diagram](images/system Architecture.png)
 ## Functional Requirements
 
 1. Upload CSV/Excel file
