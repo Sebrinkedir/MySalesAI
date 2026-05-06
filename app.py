@@ -1,19 +1,15 @@
-from Agents.data_agent import DataAgent
-from Agents.analysis_agent import AnalysisAgent
-from Agents.insight_agent import InsightAgent
+from agents.data_agent import DataAgent
 
 def main():
     print("MySalesAI starting...")
 
-    data_agent = DataAgent()
-    analysis_agent = AnalysisAgent()
-    insight_agent = InsightAgent()
+    agent = DataAgent()
 
-    data = data_agent.run()
-    results = analysis_agent.run(data)
-    insights = insight_agent.run(results)
+    # FIXED LINE
+    data = agent.load_data("data/sample.csv")
 
-    print("Final Insights:", insights)
+    print("Data loaded successfully")
+    print(data.head())
 
 if __name__ == "__main__":
     main()
