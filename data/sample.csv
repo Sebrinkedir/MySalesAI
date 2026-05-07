@@ -1,4 +1,6 @@
-name,price,quantity
-apple,10,5
-banana,20,3
-mango,15,2
+date,product,revenue
+2024-01-01,A,100
+2024-01-02,B,200
+2024-02-01,A,150
+2024-02-02,B,300
+2024-03-01,C,250

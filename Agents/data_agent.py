@@ -1,9 +1,6 @@
 import pandas as pd
 
 class DataAgent:
-    """
-    Responsible for loading and validating sales data.
-    """
 
     def load_data(self, file_path):
         if file_path.endswith(".csv"):
@@ -16,7 +13,6 @@ class DataAgent:
         return self.validate(df)
 
     def validate(self, df):
-        # Basic validation rules
         if df.empty:
             raise ValueError("Dataset is empty")
 

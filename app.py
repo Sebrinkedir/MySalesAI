@@ -1,15 +1,20 @@
-from agents.data_agent import DataAgent
+from Agents.coordinator import Coordinator
 
 def main():
     print("MySalesAI starting...")
 
-    agent = DataAgent()
+    coordinator = Coordinator()
 
-    # FIXED LINE
-    data = agent.load_data("data/sample.csv")
+    file_path = "data/sample.csv"
 
-    print("Data loaded successfully")
-    print(data.head())
+    result = coordinator.run(file_path)
+
+    print("\n=== ANALYSIS RESULTS ===")
+    print(result["analysis"])
+
+    print("\n=== GENERATED INSIGHTS ===")
+    print(result["insights"])
+
 
 if __name__ == "__main__":
     main()
