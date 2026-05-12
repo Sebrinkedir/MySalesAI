@@ -1,0 +1,65 @@
+timestamp,mode,question,analysis,insights,latency_seconds,accuracy_percent,hallucination_count,flagged_terms
+2026-05-12 15:09:55.369899,multi_agent,Why did revenue decrease in March?,"{'total_revenue': 1000, 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}, 'monthly_percentage_change': {'2024-01': None, '2024-02': 50.0, '2024-03': -44.44}}","Verified Findings:
+- Total revenue for March 2024 was 250.
+- The monthly percentage change in revenue from February to March 2024 was -44.44%.
+
+Answer:
+- The revenue decreased in March primarily due to a significant drop in sales compared to February, where revenue was 450.
+
+Missing Evidence:
+- The specific reasons for the decline in revenue in March cannot be determined from the available data.",3.27,100.0,0,[]
+2026-05-12 15:09:58.783039,single_agent,Why did revenue decrease in March?,"{'total_revenue': 1000, 'top_product': 'B', 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}, 'monthly_percentage_change': {'2024-01': None, '2024-02': 50.0, '2024-03': -44.44}}","The revenue decreased in March primarily due to a significant drop in sales compared to the previous month. In February, the total revenue was $450, while in March it fell to $250, resulting in a monthly percentage change of -44.44%. 
+
+This decline could be attributed to several factors, such as reduced customer demand, increased competition, or potential issues with product availability or marketing efforts. 
+
+To provide a more comprehensive analysis, additional data would be helpful, including:
+- Insights into customer behavior or feedback during March
+- Information on marketing campaigns or promotions that were active in February versus March
+- Any changes in pricing or product offerings that may have influenced sales
+
+With this additional context, we could better understand the reasons behind the revenue decrease in March.",3.41,100.0,5,"['competition', 'marketing', 'promotion', 'customer behavior', 'pricing']"
+2026-05-12 15:10:00.664350,multi_agent,Which product performed best?,{'top_product': 'B'},"Verified Findings:
+- The top-performing product is B.
+
+Answer:
+- Product B performed the best.
+
+Missing Evidence:
+- The specific reasons for Product B's performance are not provided in the verified data.",1.88,100.0,0,[]
+2026-05-12 15:10:03.934060,single_agent,Which product performed best?,"{'total_revenue': 1000, 'top_product': 'B', 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}, 'monthly_percentage_change': {'2024-01': None, '2024-02': 50.0, '2024-03': -44.44}}","The product that performed best is Product B, as indicated by the verified metrics. 
+
+In terms of revenue, the total revenue generated was $1000, with Product B leading the sales performance. 
+
+Additionally, the monthly trend shows the following revenue for Product B over the first three months of 2024:
+- January: $300
+- February: $450
+- March: $250
+
+There was a notable increase in sales from January to February, with a monthly percentage change of 50%. However, sales decreased by 44.44% from February to March.
+
+If you need further insights, such as comparisons with other products or more detailed performance metrics, please provide additional data.",3.27,100.0,0,[]
+2026-05-12 15:10:05.935369,multi_agent,What is the monthly revenue trend?,"{'total_revenue': 1000, 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}}","Verified Findings:
+- The total revenue is 1000.
+- The monthly revenue trend is as follows:
+  - January 2024: 300
+  - February 2024: 450
+  - March 2024: 250
+
+Answer:
+- The monthly revenue trend shows an increase from January to February, followed by a decrease in March.
+
+Missing Evidence:
+- The reasons for the fluctuations in monthly revenue are not provided in the verified data.",2.0,100.0,0,[]
+2026-05-12 15:10:08.696159,single_agent,What is the monthly revenue trend?,"{'total_revenue': 1000, 'top_product': 'B', 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}, 'monthly_percentage_change': {'2024-01': None, '2024-02': 50.0, '2024-03': -44.44}}","The monthly revenue trend for the specified period is as follows:
+
+- **January 2024**: $300
+- **February 2024**: $450
+- **March 2024**: $250
+
+In terms of percentage change month-over-month:
+
+- From January to February, there was an increase of **50.0%**.
+- From February to March, there was a decrease of **44.44%**.
+- Note that there is no percentage change available for January as it is the starting month.
+
+Overall, while February showed a strong increase in revenue, March experienced a significant decline. If you need further insights or a more detailed analysis, please specify any additional data or metrics you would like to explore.",2.76,100.0,0,[]

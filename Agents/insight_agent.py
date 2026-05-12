@@ -26,18 +26,32 @@ You are a professional sales analyst.
 The user asked:
 "{question}"
 
-Analyze the following verified business metrics and answer the user's question.
+You are given ONLY verified results computed by the Analysis Agent.
 
-DATA:
+VERIFIED DATA:
 {analysis_summary}
 
-Rules:
-- Use only the provided data
-- Do not invent numbers
-- If the data is insufficient, say what additional data is needed
-- Keep the answer clear and professional
-"""
+Your task:
+Answer the user's question using only the verified data above.
 
+Strict rules:
+1. Do not invent causes.
+2. Do not assume marketing, competition, seasonality, customer behavior, or inventory issues unless they are present in the verified data.
+3. Separate facts from missing evidence.
+4. If the reason cannot be fully determined from the data, clearly say so.
+5. Keep the answer concise and professional.
+
+Required response format:
+
+Verified Findings:
+- ...
+
+Answer:
+- ...
+
+Missing Evidence:
+- ...
+"""
         response = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
