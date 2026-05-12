@@ -1,32 +1,61 @@
+import os
+from dotenv import load_dotenv
+from openai import OpenAI
+
+# Load environment variables
+load_dotenv()
+
+# Create OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+
 class InsightAgent:
     """
-    Converts numerical analysis into human-readable business insights.
+    Converts numerical analysis into AI-generated business insights.
     """
 
-    def generate_insight(self, analysis_results):
+    def generate_insight(self, analysis_results, question):
 
         total_revenue = analysis_results["total_revenue"]
         top_product = analysis_results["top_product"]
         trend = analysis_results["monthly_trend"]
 
-        insight = f"""
-=== SALES INSIGHTS ===
+        prompt = f"""
+You are a professional sales analyst.
 
-Total Revenue:
-{total_revenue}
+The user asked:
+"{question}"
 
-Top Performing Product:
-{top_product}
+Analyze the following verified business metrics and answer the user's question.
 
-Monthly Revenue Trend:
-{trend}
+DATA:
+- Total Revenue: {total_revenue}
+- Top Product: {top_product}
+- Monthly Revenue Trend: {trend}
 
-Interpretation:
-- The business generated a total revenue of {total_revenue}.
-- The best-performing product was {top_product}.
-- Monthly trends show how revenue evolved over time.
-
-Further anomaly detection can improve strategic insights.
+Rules:
+- Use only the provided data
+- Do not invent numbers
+- If the data is insufficient, say what additional data is needed
+- Keep the answer clear and professional
 """
 
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are an expert sales analytics assistant."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            temperature=0.3
+        )
+
+        insight = response.choices[0].message.content
+
         return insight
+    
