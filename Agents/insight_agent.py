@@ -16,9 +16,9 @@ class InsightAgent:
 
     def generate_insight(self, analysis_results, question):
 
-        total_revenue = analysis_results["total_revenue"]
-        top_product = analysis_results["top_product"]
-        trend = analysis_results["monthly_trend"]
+        analysis_summary = "\n".join(
+    [f"- {key}: {value}" for key, value in analysis_results.items()]
+)
 
         prompt = f"""
 You are a professional sales analyst.
@@ -29,9 +29,7 @@ The user asked:
 Analyze the following verified business metrics and answer the user's question.
 
 DATA:
-- Total Revenue: {total_revenue}
-- Top Product: {top_product}
-- Monthly Revenue Trend: {trend}
+{analysis_summary}
 
 Rules:
 - Use only the provided data

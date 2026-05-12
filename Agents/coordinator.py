@@ -16,7 +16,7 @@ class Coordinator:
 
         df = self.data_agent.load_data(file_path)
 
-        analysis_results = self.analysis_agent.compute_all(df)
+        analysis_results = self.analysis_agent.compute_all(df, question)
 
         insights = self.insight_agent.generate_insight(analysis_results, question)
 

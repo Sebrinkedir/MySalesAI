@@ -47,3 +47,27 @@ To better understand the reasons behind this decrease, additional data would be 
 4. Inventory levels for the top product (Product B) to see if stock issues contributed to the decline.
 
 With this additional information, a more comprehensive analysis could be conducted to identify the specific factors leading to the revenue decrease in March.",4.75
+2026-05-12 12:52:48.127347,Multi-Agent System,Which product performed best?,{'top_product': 'B'},"Based on the provided data, the top-performing product is Product B. 
+
+If you require a more detailed analysis, additional data such as sales volume, revenue generated, or comparison with other products would be helpful.",3.28
+2026-05-12 12:54:08.771688,Multi-Agent System,What is the monthly revenue trend?,"{'total_revenue': 1000, 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}}","Based on the provided data, the monthly revenue trend for the first quarter of 2024 is as follows:
+
+- January 2024: $300
+- February 2024: $450
+- March 2024: $250
+
+From this data, we can observe that revenue increased from January to February, reaching its peak in February at $450. However, there was a decline in March, with revenue dropping to $250.
+
+To summarize, the monthly revenue trend shows an initial increase followed by a decrease in March. 
+
+If you require a more comprehensive analysis, additional data such as previous months' revenue, seasonal trends, or factors influencing sales would be helpful.",4.1
+2026-05-12 12:55:24.576242,Multi-Agent System,Why did revenue decrease in March?,"{'total_revenue': 1000, 'monthly_trend': {'2024-01': 300, '2024-02': 450, '2024-03': 250}, 'monthly_percentage_change': {'2024-01': None, '2024-02': 50.0, '2024-03': -44.44}}","The revenue decrease in March can be attributed to a significant drop in monthly revenue compared to February. Specifically, total revenue for March was $250, which represents a 44.44% decrease from February's revenue of $450. 
+
+This decline could be due to various factors, such as reduced sales volume, seasonal fluctuations, changes in customer demand, or increased competition. However, to provide a more detailed analysis, additional data would be helpful, including:
+
+1. Information on any marketing campaigns or promotions that were active in February but not in March.
+2. Insights into customer behavior or feedback during March.
+3. Changes in pricing or product offerings between February and March.
+4. Any external factors that may have impacted sales, such as economic conditions or industry trends.
+
+With this additional information, a more comprehensive understanding of the revenue decrease could be achieved.",6.08
