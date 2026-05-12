@@ -29,16 +29,16 @@ Does a role-separated multi-agent architecture produce more accurate, reliable, 
 
 The system contains four specialized agents:
 
-1. **Data Agent**
+1. Data Agent
    - Loads and validates CSV/Excel files
 
-2. **Analysis Agent**
+2. Analysis Agent
    - Computes KPIs, trends, and revenue changes
 
-3. **Insight Agent**
-   - Uses OpenAI GPT models to generate business insights
+3. Insight Agent
+   - Uses OpenAI GPT models to generate grounded business insights
 
-4. **Coordinator Agent**
+4. Coordinator Agent
    - Orchestrates communication between all agents
 
 ---
@@ -46,7 +46,6 @@ The system contains four specialized agents:
 ## Single-Agent Baseline
 
 A baseline architecture is also implemented where one agent handles:
-
 - data loading
 - analysis
 - reasoning
@@ -67,62 +66,50 @@ This enables experimental comparison between:
 - Monthly trend analysis
 - Revenue change detection
 - Latency tracking
-- Evaluation logging
+- Automated evaluation pipeline
+- Numerical accuracy scoring
+- Hallucination detection
+- Evaluation summaries
+- Streamlit web UI
 - Single-Agent baseline
 - Multi-Agent architecture
 
 ---
 
-## Example Questions
-
-- Why did revenue decrease in March?
-- Which product performed best?
-- What is the monthly revenue trend?
-- Did sales improve over time?
-
----
-
-## Technologies Used
-
-- Python
-- OpenAI API
-- Pandas
-- Git/GitHub
-
----
-
 ## Evaluation Metrics
 
-The project evaluates:
+The system currently evaluates:
 
-- Numerical accuracy
-- Trend detection
-- Hallucination rate
+- Numerical Accuracy
 - Latency
-- User interpretability
+- Hallucination Count
+- Trend Detection Reliability
 
 ---
 
-## Project Status
+## Automated Evaluation
 
-Current Progress:
-- Multi-Agent system operational
-- Single-Agent baseline operational
-- Dynamic routing implemented
-- Evaluation logging implemented
+The project includes:
+- `evaluation.py`
+- `results_summary.py`
 
-Next Steps:
-- Hallucination evaluation
-- Streamlit UI
-- PDF report generation
-- Automated experiments
-- User testing
+These scripts automatically:
+- run benchmark questions
+- compare architectures
+- calculate metrics
+- generate evaluation summaries
 
 ---
 
-## Setup Instructions
+## Streamlit UI
 
-### Install dependencies
+The project includes a Streamlit-based UI for:
+- CSV upload
+- natural-language question input
+- architecture selection
+- insight visualization
+
+Run the UI using:
 
 ```bash
-pip install pandas openai python-dotenv
+python -m streamlit run streamlit_app.py
