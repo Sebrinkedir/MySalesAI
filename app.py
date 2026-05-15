@@ -1,19 +1,56 @@
-from Agents.data_agent import DataAgent
-from Agents.analysis_agent import AnalysisAgent
-from Agents.insight_agent import InsightAgent
+from Agents.coordinator import Coordinator
+from Agents.single_agent import SingleAgent
+from Agents.logger import Logger
 
 def main():
     print("MySalesAI starting...")
 
-    data_agent = DataAgent()
-    analysis_agent = AnalysisAgent()
-    insight_agent = InsightAgent()
+    file_path = "data/sample.csv"
+    logger = Logger()
+    question = input("Ask a sales question: ")
 
-    data = data_agent.run()
-    results = analysis_agent.run(data)
-    insights = insight_agent.run(results)
+    print("\nChoose system mode:")
+    print("1. Multi-Agent System")
+    print("2. Single-Agent Baseline")
 
-    print("Final Insights:", insights)
+    choice = input("Enter 1 or 2: ")
+
+    if choice == "1":
+        coordinator = Coordinator()
+        result = coordinator.run(file_path, question)
+        mode = "Multi-Agent System"
+
+    elif choice == "2":
+        single_agent = SingleAgent()
+        result = single_agent.run(file_path, question)
+        mode = "Single-Agent Baseline"
+
+    else:
+        print("Invalid choice.")
+        return
+
+    print(f"\n=== MODE: {mode} ===")
+
+    print("\n=== ANALYSIS RESULTS ===")
+    print(result["analysis"])
+
+    print("\n=== GENERATED INSIGHTS ===")
+    print(result["insights"])
+
+    if "latency_seconds" in result:
+        print("\n=== LATENCY ===")
+        print(f'{result["latency_seconds"]} seconds')
+
+    logger.log_run(
+        mode=mode,
+        question=question,
+        analysis=result["analysis"],
+        insights=result["insights"],
+        latency=result.get("latency_seconds", None)
+    )
+
+    print("\nRun saved to logs/evaluation_log.csv")
+
 
 if __name__ == "__main__":
     main()

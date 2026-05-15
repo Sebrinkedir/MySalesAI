@@ -1,46 +1,120 @@
 # MySalesAI
+A Multi-Agent LLM System for Automated Sales Data Analysis
 
-Multi-Agent Sequential Workflow
-![Architecture Diagram](images/System Architecture.png)
-## Functional Requirements
+---
 
-1. Upload CSV/Excel file
-2. Ask a question (e.g. "Why did revenue drop?")
-3. System analyzes data
-4. System gives insights
-5. System shows charts
-6. Support single-agent and multi-agent modes
+## Project Overview
 
-## Non-Functional Requirements
+MySalesAI is a research-focused AI analytics system designed to compare:
 
-- Should be accurate
-- Should be easy to use
-- Should not crash on bad data
-- Should give clear explanations
+- Single-Agent LLM systems
+vs
+- Multi-Agent LLM architectures
 
-## Architecture
+for automated sales data analysis.
 
-The system has two versions:
+The system accepts CSV sales data and natural-language business questions, then generates analytical insights using GPT-powered agents.
 
-1. Single-Agent:
-One AI does everything (data + analysis + explanation)
+---
 
-2. Multi-Agent:
-- Data Agent → loads and cleans data
-- Analysis Agent → calculates results
-- Insight Agent → explains results
-- Coordinator → connects everything
+## Research Question
 
-This separation helps reduce errors and improve clarity.
+Does a role-separated multi-agent architecture produce more accurate, reliable, and user-interpretable sales insights than a single-agent approach, and at what cost in latency or complexity?
 
-## Current Progress (April 17)
+---
 
-- Requirements finalized
-- Architecture defined and diagram created
-- Project structure initialized
-- Multi-agent skeleton implemented
-- Basic system flow running
+## System Architecture
 
+<<<<<<< HEAD
 Next: Implement data processing and UI
 
-## Current Progress (May 15)
+=======
+### Multi-Agent System
+
+The system contains four specialized agents:
+
+1. Data Agent
+   - Loads and validates CSV/Excel files
+
+2. Analysis Agent
+   - Computes KPIs, trends, and revenue changes
+
+3. Insight Agent
+   - Uses OpenAI GPT models to generate grounded business insights
+
+4. Coordinator Agent
+   - Orchestrates communication between all agents
+
+---
+
+## Single-Agent Baseline
+
+A baseline architecture is also implemented where one agent handles:
+- data loading
+- analysis
+- reasoning
+- explanation
+
+This enables experimental comparison between:
+- modular multi-agent reasoning
+- monolithic single-agent reasoning
+
+---
+
+## Features Implemented
+
+- CSV sales data ingestion
+- Natural-language business questions
+- GPT-powered insight generation
+- Dynamic question-aware analysis routing
+- Monthly trend analysis
+- Revenue change detection
+- Latency tracking
+- Automated evaluation pipeline
+- Numerical accuracy scoring
+- Hallucination detection
+- Evaluation summaries
+- Streamlit web UI
+- Single-Agent baseline
+- Multi-Agent architecture
+
+---
+
+## Evaluation Metrics
+
+The system currently evaluates:
+
+- Numerical Accuracy
+- Latency
+- Hallucination Count
+- Trend Detection Reliability
+
+---
+
+## Automated Evaluation
+
+The project includes:
+- `evaluation.py`
+- `results_summary.py`
+
+These scripts automatically:
+- run benchmark questions
+- compare architectures
+- calculate metrics
+- generate evaluation summaries
+
+---
+
+## Streamlit UI
+
+The project includes a Streamlit-based UI for:
+- CSV upload
+- natural-language question input
+- architecture selection
+- insight visualization
+
+Run the UI using:
+
+```bash
+python -m streamlit run streamlit_app.py
+>>>>>>> 56202f28c1dbf7cd2a55ca8109d7b8ed9a6feb0c
