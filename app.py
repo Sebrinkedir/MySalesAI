@@ -2,11 +2,17 @@ from Agents.coordinator import Coordinator
 from Agents.single_agent import SingleAgent
 from Agents.logger import Logger
 
+from report_generator import generate_pdf_report
+from chart_generator import generate_revenue_chart
+
+
 def main():
     print("MySalesAI starting...")
 
     file_path = "data/sample.csv"
+
     logger = Logger()
+
     question = input("Ask a sales question: ")
 
     print("\nChoose system mode:")
@@ -34,6 +40,15 @@ def main():
     print("\n=== ANALYSIS RESULTS ===")
     print(result["analysis"])
 
+    chart_path = None
+
+    if "monthly_trend" in result["analysis"]:
+        chart_path = generate_revenue_chart(
+            result["analysis"]["monthly_trend"]
+        )
+
+        print(f"\nChart generated: {chart_path}")
+
     print("\n=== GENERATED INSIGHTS ===")
     print(result["insights"])
 
@@ -51,6 +66,17 @@ def main():
 
     print("\nRun saved to logs/evaluation_log.csv")
 
+    pdf_path = generate_pdf_report(
+    mode=mode,
+    question=question,
+    analysis=result["analysis"],
+    insights=result["insights"],
+    latency=result.get("latency_seconds", None),
+    chart_path=chart_path
+    )
+
+    print(f"\nPDF report generated: {pdf_path}")
+
 
 if __name__ == "__main__":
-    main()
+    main() 

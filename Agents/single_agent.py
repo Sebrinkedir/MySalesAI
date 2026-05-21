@@ -1,8 +1,12 @@
 import os
 import time
-import pandas as pd
+
 from dotenv import load_dotenv
 from openai import OpenAI
+
+from Agents.data_agent import DataAgent
+from Agents.analysis_agent import AnalysisAgent
+
 
 load_dotenv()
 
@@ -10,61 +14,32 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 class SingleAgent:
-    """
-    Baseline system:
-    One agent handles loading, analysis, and explanation.
-    """
 
     def run(self, file_path, question):
+
         start_time = time.time()
 
-        df = pd.read_csv(file_path)
+        data_agent = DataAgent()
+        analysis_agent = AnalysisAgent()
 
-        total_revenue = int(df["revenue"].sum())
+        df = data_agent.load_data(file_path)
 
-        top_product = df.groupby("product")["revenue"].sum().idxmax()
-
-        df["date"] = pd.to_datetime(df["date"])
-        monthly = df.groupby(df["date"].dt.to_period("M"))["revenue"].sum()
-
-        monthly_trend = {
-            str(month): int(value)
-            for month, value in monthly.items()
-        }
-
-        monthly_percentage_change = monthly.pct_change() * 100
-
-        monthly_percentage_change = {
-            str(month): round(value, 2) if pd.notna(value) else None
-            for month, value in monthly_percentage_change.items()
-        }
-
-        analysis_results = {
-            "total_revenue": total_revenue,
-            "top_product": top_product,
-            "monthly_trend": monthly_trend,
-            "monthly_percentage_change": monthly_percentage_change
-        }
+        analysis_results = analysis_agent.compute_all(df, question)
 
         prompt = f"""
-You are a single AI sales analyst.
+You are a business analytics assistant.
 
 The user asked:
 "{question}"
 
-You are responsible for:
-1. Understanding the data
-2. Computing insights
-3. Explaining results
-
-Verified calculated metrics:
+Verified business metrics:
 {analysis_results}
 
 Rules:
-- Use only the verified calculated metrics above
-- Do not invent numbers
-- If the data is insufficient, say what additional data is needed
-- Keep the answer clear and professional
+- Use ONLY the verified metrics above
+- Do not invent unsupported claims
+- If information is missing, clearly state limitations
+- Provide professional business insights
 """
 
         response = client.chat.completions.create(
@@ -72,7 +47,7 @@ Rules:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a single-agent sales analytics assistant."
+                    "content": "You are a business intelligence assistant."
                 },
                 {
                     "role": "user",
