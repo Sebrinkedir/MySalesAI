@@ -1,120 +1,109 @@
 # MySalesAI
-A Multi-Agent LLM System for Automated Sales Data Analysis
 
----
+## Adaptive Multi-Agent Business Intelligence System
 
-## Project Overview
+MySalesAI is an adaptive Multi-Agent AI system designed for real-world business intelligence and sales analytics.  
+The system combines deterministic KPI computation, Large Language Models (LLMs), dynamic schema intelligence, and explainable reasoning to generate grounded business insights from heterogeneous business datasets.
 
-MySalesAI is a research-focused AI analytics system designed to compare:
-
-- Single-Agent LLM systems
+The project compares:
+- Multi-Agent Architecture
 vs
-- Multi-Agent LLM architectures
+- Single-Agent Baseline
 
-for automated sales data analysis.
-
-The system accepts CSV sales data and natural-language business questions, then generates analytical insights using GPT-powered agents.
-
----
-
-## Research Question
-
-Does a role-separated multi-agent architecture produce more accurate, reliable, and user-interpretable sales insights than a single-agent approach, and at what cost in latency or complexity?
-
----
-
-## System Architecture
-
-<<<<<<< HEAD
-Next: Implement data processing and UI
-
-=======
-### Multi-Agent System
-
-The system contains four specialized agents:
-
-1. Data Agent
-   - Loads and validates CSV/Excel files
-
-2. Analysis Agent
-   - Computes KPIs, trends, and revenue changes
-
-3. Insight Agent
-   - Uses OpenAI GPT models to generate grounded business insights
-
-4. Coordinator Agent
-   - Orchestrates communication between all agents
-
----
-
-## Single-Agent Baseline
-
-A baseline architecture is also implemented where one agent handles:
-- data loading
-- analysis
-- reasoning
-- explanation
-
-This enables experimental comparison between:
-- modular multi-agent reasoning
-- monolithic single-agent reasoning
-
----
-
-## Features Implemented
-
-- CSV sales data ingestion
-- Natural-language business questions
-- GPT-powered insight generation
-- Dynamic question-aware analysis routing
-- Monthly trend analysis
-- Revenue change detection
-- Latency tracking
-- Automated evaluation pipeline
-- Numerical accuracy scoring
-- Hallucination detection
-- Evaluation summaries
-- Streamlit web UI
-- Single-Agent baseline
-- Multi-Agent architecture
-
----
-
-## Evaluation Metrics
-
-The system currently evaluates:
-
-- Numerical Accuracy
+using:
+- Accuracy
 - Latency
+- Hallucination Reduction
+- Explainability
+
+---
+
+# Project Objectives
+
+The project aims to:
+- Analyze real-world business datasets
+- Adapt dynamically to different schemas
+- Generate grounded business insights
+- Reduce hallucinated explanations
+- Benchmark multi-agent vs single-agent reasoning
+- Provide explainable AI-driven business analytics
+
+---
+
+# Key Features
+
+## Adaptive Dataset Intelligence
+The system automatically adapts to multiple real-world business datasets through:
+- Dynamic schema mapping
+- Dataset profiling
+- Automatic column role detection
+- Flexible business entity recognition
+
+Supported business concepts include:
+- Revenue / Sales / Weekly_Sales
+- Product / Store / Category / Region
+- Date / Order_Date / Invoice_Date
+
+---
+
+## Multi-Agent Architecture
+
+The system uses specialized agents:
+
+### Data Agent
+- Loads CSV and Excel files
+- Validates datasets
+- Standardizes schemas
+
+### Dataset Profiler Agent
+- Detects:
+  - Date columns
+  - Numeric metrics
+  - Business dimensions
+  - Revenue columns
+  - Business entities
+
+### Analysis Agent
+Performs deterministic KPI computation:
+- Total Revenue
+- Monthly Trends
+- Percentage Changes
+- Best/Worst Month
+- Revenue Contribution
+- Trend Direction
+- Executive KPI Summaries
+
+### Insight Agent
+Generates:
+- Evidence-grounded insights
+- Executive summaries
+- Strategic interpretations
+- Missing evidence disclosure
+
+### Evaluation Layer
+Benchmarks:
+- Accuracy
 - Hallucination Count
-- Trend Detection Reliability
+- Latency
+- Question-aware reasoning
 
 ---
 
-## Automated Evaluation
+# System Workflow
 
-The project includes:
-- `evaluation.py`
-- `results_summary.py`
-
-These scripts automatically:
-- run benchmark questions
-- compare architectures
-- calculate metrics
-- generate evaluation summaries
-
----
-
-## Streamlit UI
-
-The project includes a Streamlit-based UI for:
-- CSV upload
-- natural-language question input
-- architecture selection
-- insight visualization
-
-Run the UI using:
-
-```bash
-python -m streamlit run streamlit_app.py
->>>>>>> 56202f28c1dbf7cd2a55ca8109d7b8ed9a6feb0c
+```text
+User Dataset
+      ↓
+Data Agent
+      ↓
+Dataset Profiler
+      ↓
+Schema Standardization
+      ↓
+Analysis Agent
+      ↓
+Insight Agent
+      ↓
+Evaluation Framework
+      ↓
+Dashboard + PDF Reports
