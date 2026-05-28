@@ -1,3 +1,29 @@
-__pycache__/
+# Python
+
+**pycache**/
 *.pyc
-.env
+
+# Logs
+
+logs/*.csv
+
+# Charts
+
+charts/*.png
+
+# Reports
+
+reports/*.pdf
+
+# Temporary files
+
+*.tmp
+
+# Streamlit cache
+
+.streamlit/
+
+# OS files
+
+.DS_Store
+Thumbs.db

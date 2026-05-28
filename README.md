@@ -1,109 +1,248 @@
 # MySalesAI
 
-## Adaptive Multi-Agent Business Intelligence System
+## Adaptive Multi-Format Business Intelligence System
 
-MySalesAI is an adaptive Multi-Agent AI system designed for real-world business intelligence and sales analytics.  
-The system combines deterministic KPI computation, Large Language Models (LLMs), dynamic schema intelligence, and explainable reasoning to generate grounded business insights from heterogeneous business datasets.
+MySalesAI is an adaptive multi-agent business intelligence platform designed to analyze real-world business datasets across multiple file formats. The system automatically profiles datasets, detects schemas dynamically, generates business insights, visualizes trends, evaluates reasoning quality, and produces explainable reports.
 
-The project compares:
-- Multi-Agent Architecture
-vs
-- Single-Agent Baseline
-
-using:
-- Accuracy
-- Latency
-- Hallucination Reduction
-- Explainability
+The project compares a Multi-Agent architecture against a Single-Agent baseline using evaluation metrics such as accuracy, latency, and hallucination count.
 
 ---
 
-# Project Objectives
+# Features
 
-The project aims to:
-- Analyze real-world business datasets
-- Adapt dynamically to different schemas
-- Generate grounded business insights
-- Reduce hallucinated explanations
-- Benchmark multi-agent vs single-agent reasoning
-- Provide explainable AI-driven business analytics
-
----
-
-# Key Features
-
-## Adaptive Dataset Intelligence
-The system automatically adapts to multiple real-world business datasets through:
-- Dynamic schema mapping
-- Dataset profiling
-- Automatic column role detection
-- Flexible business entity recognition
-
-Supported business concepts include:
-- Revenue / Sales / Weekly_Sales
-- Product / Store / Category / Region
-- Date / Order_Date / Invoice_Date
+* Multi-Agent Business Intelligence Architecture
+* Single-Agent Baseline Comparison
+* Adaptive Dataset Profiling
+* Automatic Schema Detection
+* Revenue Trend Analysis
+* Executive Summary Generation
+* Explainable AI Insights
+* Hallucination Detection Framework
+* Automated Evaluation Pipeline
+* Streamlit Interactive Dashboard
+* PDF Report Generation
+* Revenue Trend Visualization
 
 ---
 
-## Multi-Agent Architecture
+# Supported File Types
 
-The system uses specialized agents:
+The system supports multiple structured business dataset formats:
 
-### Data Agent
-- Loads CSV and Excel files
-- Validates datasets
-- Standardizes schemas
-
-### Dataset Profiler Agent
-- Detects:
-  - Date columns
-  - Numeric metrics
-  - Business dimensions
-  - Revenue columns
-  - Business entities
-
-### Analysis Agent
-Performs deterministic KPI computation:
-- Total Revenue
-- Monthly Trends
-- Percentage Changes
-- Best/Worst Month
-- Revenue Contribution
-- Trend Direction
-- Executive KPI Summaries
-
-### Insight Agent
-Generates:
-- Evidence-grounded insights
-- Executive summaries
-- Strategic interpretations
-- Missing evidence disclosure
-
-### Evaluation Layer
-Benchmarks:
-- Accuracy
-- Hallucination Count
-- Latency
-- Question-aware reasoning
+* CSV (.csv)
+* Excel (.xlsx)
+* SQLite Databases (.db, .sqlite)
+* Word Documents (.docx)
+* PDF Business Reports with Structured Tables (.pdf)
 
 ---
 
-# System Workflow
+# Supported Business Analytics
+
+The platform automatically performs:
+
+* Revenue Analysis
+* Monthly Trend Analysis
+* Entity Contribution Analysis
+* Best/Worst Period Detection
+* Percentage Change Analysis
+* Executive Summary Generation
+* Evidence-Based Insights
+* KPI Summarization
+
+---
+
+# System Architecture
+
+The project contains:
+
+## Multi-Agent System
+
+The Multi-Agent pipeline consists of:
+
+* DataAgent
+* AnalysisAgent
+* InsightAgent
+* VerificationAgent
+* Coordinator
+
+Each agent performs a specialized task in the business intelligence workflow.
+
+## Single-Agent Baseline
+
+A simplified baseline system used for comparative evaluation.
+
+---
+
+# Adaptive Intelligence Features
+
+The system includes:
+
+* Automatic Column Mapping
+* Dynamic Revenue Column Detection
+* Intelligent SQLite Table Selection
+* Structured PDF Table Extraction
+* Word Table Extraction
+* Flexible Business Schema Adaptation
+* Real-World Dataset Compatibility
+
+---
+
+# Dashboard Features
+
+The Streamlit dashboard provides:
+
+* File Upload Interface
+* Multi-Agent vs Single-Agent Selection
+* Interactive Revenue Charts
+* Evaluation Dashboard
+* Downloadable PDF Reports
+* Business Insights Visualization
+
+---
+
+# Evaluation Metrics
+
+The evaluation framework measures:
+
+* Accuracy
+* Latency
+* Hallucination Count
+* Comparative System Performance
+
+---
+
+# Project Structure
+
+```bash
+MySalesAI/
+│
+├── Agents/
+│   ├── analysis_agent.py
+│   ├── coordinator.py
+│   ├── data_agent.py
+│   ├── dataset_profiler.py
+│   ├── insight_agent.py
+│   ├── single_agent.py
+│   └── verification_agent.py
+│
+├── charts/
+├── data/
+├── logs/
+├── reports/
+│
+├── app.py
+├── evaluation.py
+├── streamlit_app.py
+├── report_generator.py
+├── chart_generator.py
+└── requirements.txt
+```
+
+---
+
+# Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Sebrinkedir/MySalesAI.git
+cd MySalesAI
+```
+
+## Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Running the CLI System
+
+```bash
+python app.py
+```
+
+---
+
+# Running the Streamlit Dashboard
+
+```bash
+python -m streamlit run streamlit_app.py
+```
+
+---
+
+# Example Questions
 
 ```text
-User Dataset
-      ↓
-Data Agent
-      ↓
-Dataset Profiler
-      ↓
-Schema Standardization
-      ↓
-Analysis Agent
-      ↓
-Insight Agent
-      ↓
-Evaluation Framework
-      ↓
-Dashboard + PDF Reports
+Provide an executive summary of business performance.
+```
+
+```text
+What business dimensions and metrics are available in this dataset?
+```
+
+```text
+Which business entity contributed most to revenue?
+```
+
+```text
+What are the major revenue trends?
+```
+
+```text
+What additional evidence would improve the analysis?
+```
+
+---
+
+# Example Datasets
+
+Recommended datasets for testing:
+
+* Superstore Sales Dataset
+* Walmart Sales Dataset
+* Supermarket Sales Dataset
+* Chinook SQLite Database
+* Invoice PDF Datasets
+* Business Sales Report PDFs
+
+---
+
+# Research Contribution
+
+This project demonstrates:
+
+* Adaptive multi-format business intelligence
+* Multi-agent reasoning for enterprise analytics
+* Explainable business insight generation
+* Hallucination-aware analytics pipelines
+* Automated business dataset understanding
+
+---
+
+# Future Improvements
+
+Potential future enhancements include:
+
+* OCR for scanned PDFs
+* NLP-based financial report understanding
+* SQL query generation
+* Forecasting and predictive analytics
+* LLM-powered conversational querying
+* Real-time dashboard streaming
+* Cloud deployment support
+
+---
+
+# Author
+
+Sujit Reddy
+
+---
+
+# License
+
+This project is intended for academic and research purposes.

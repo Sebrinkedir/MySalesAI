@@ -9,7 +9,11 @@ from chart_generator import generate_revenue_chart
 def main():
     print("MySalesAI starting...")
 
-    file_path = "data/sample.csv"
+    # Change this file path depending on what you want to test:
+    # CSV: data/sample.csv
+    # Real CSV: data/real_sample.csv
+    # SQLite: data/business_sales.db
+    file_path = "data/business_sales.pdf"
 
     logger = Logger()
 
@@ -67,16 +71,16 @@ def main():
     print("\nRun saved to logs/evaluation_log.csv")
 
     pdf_path = generate_pdf_report(
-    mode=mode,
-    question=question,
-    analysis=result["analysis"],
-    insights=result["insights"],
-    latency=result.get("latency_seconds", None),
-    chart_path=chart_path
+        mode=mode,
+        question=question,
+        analysis=result["analysis"],
+        insights=result["insights"],
+        latency=result.get("latency_seconds", None),
+        chart_path=chart_path
     )
 
     print(f"\nPDF report generated: {pdf_path}")
 
 
 if __name__ == "__main__":
-    main() 
+    main()
