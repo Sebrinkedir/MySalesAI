@@ -237,9 +237,6 @@ Potential future enhancements include:
 
 ---
 
-# Author
-
-Sujit Reddy
 
 ---
 
